@@ -17,6 +17,7 @@ if(email !== null){
 
 */
 
+/*
 let password = prompt("Entrer un mot de passe.");
 
 
@@ -31,4 +32,19 @@ if(password !== null){
         alert(res)
     }
 
+}
+*/
+
+let name = prompt("Quel est votre nom ?")
+let childNum = prompt("Combien d'enfants avez-vous ?");
+
+if(name !== null && childNum !== null){
+    childNum = parseInt(childNum);
+    if(childNum <= 0){
+        alert(`${name}, vous n’avez pas d’enfant`)
+    }
+    else{
+        let textChild = childNum === 1 ? "enfant" : "enfants"; 
+        alert(`${name}, vous avez ${childNum} ${textChild}.`)
+    }
 }
