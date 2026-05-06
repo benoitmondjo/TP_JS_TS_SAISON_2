@@ -20,7 +20,7 @@ function isValidEmail(email){
 /**
  * Fonction permetant de valide un mot de passe
  * @param {string} password - mot de passe saisis par le user
- * @returns {boolean | Array} - True si password valié. Sinon un tableau contenant les messages d'erreurs. 
+ * @returns {true | Array} - True si password valié. Sinon un tableau contenant les messages d'erreurs. 
  */
 function isValidePassword(password){
 
@@ -47,4 +47,42 @@ function isValidePassword(password){
     }
 }
 
-export {isValidEmail, isValidePassword}
+/**
+ * Fonction verifiant qu'une date respect le format jour/mois/annee
+ * @param {string} date - date a verifier
+ * @returns {Object | false} - {jour,mois, annee} si date valide. Sinon false
+ */
+
+function isValidFormatDate(date){
+    
+    // expression regulier pour s'assurer que la date saisis contient 2 chiffres pour les jours, 2 chiffres pour le mois, et 4 chiffres pour l'annee
+    let regex = /^\d{2}\/\d{2}\/\d{4}$/;
+
+    // si la date respecte la condition regex, on continue
+    if(regex.test(date)){
+        
+        // la date saisis est de type string.
+        // date.splite('/') pour decouper jour, mois, annee par /
+        // .map(Number) transforme jour, mois et annnee en type Number
+        // [jour, mois, annee] destructuration. On stock les valeurs conrespondantes dans les variable, jour , mois, annee
+        let [jour, mois, annee] =  date.split("/").map(Number);
+
+        let jourValide = jour >= 1 && jour <= 31;
+        let moisValide = mois >= 1 && mois <= 12;
+        let anneeValide = annee >= 1900 && annee <= 2026;
+
+        if(jourValide && moisValide, anneeValide){
+            return {jour, mois, annee};
+        }
+        else{
+           return false;
+        }
+    }
+    // Si elle ne respect pas le regex
+    else{
+       return false;
+    }
+}
+
+
+export {isValidEmail, isValidePassword, isValidFormatDate}
