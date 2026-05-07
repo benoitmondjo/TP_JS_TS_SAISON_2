@@ -59,6 +59,7 @@ if(name !== null && childNum !== null){
 */
 
 // episode 4
+/*
 let date = prompt("Quel est votre date de naissance. Exemple : 13/05/2020");
 // let date = "13/05/2020"
 
@@ -77,3 +78,50 @@ if(date !== null){
 else{
     alert("Au revoir !")
 }
+*/
+
+// episode 5
+/*
+let nom = prompt("Entrez votre nom :");
+let prenom = prompt("Entrez votre prénom :");
+let sexe = prompt("Entrez votre sexe (H/F) :");
+
+let errors = []
+
+if( sexe !== null && prenom !== null && nom !== null){
+    if(nom.length < 4){
+        errors.push("Le nom doit contenir 4 caracters au moins")
+    }
+
+    sexe = sexe.toLocaleLowerCase();
+
+    if( sexe !== "m" && sexe !== "monsieur" && sexe !== "f" && sexe !== "madame" && sexe !== "mme"){
+        errors.push("Le sexe doit etre sous le format 'M' ou 'F'");
+    }
+
+    if(errors.length > 0){
+        console.log(errors);
+    }
+
+    if(errors.length === 0){
+        if(sexe === "m" || sexe === "monsieur"){
+            sexe === "m"
+        }
+        if(sexe === "f" || sexe === "madme" || sexe === "mme"){
+            sexe = "f"
+        }
+
+        const utilisateur = {
+            title: sexe === "m" ? "M" : "Mde",
+            nom: nom.toUpperCase(),
+            prenom: prenom?.toUpperCase(),
+            sexe: sexe.toUpperCase()
+        };
+        console.log(utilisateur)
+    }
+}
+
+else{
+    alert("Au revoir");
+}
+*/
