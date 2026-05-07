@@ -1,4 +1,4 @@
-import {isValidEmail, isValidePassword, isValidFormatDate} from './fonctions';
+import {isValidEmail, isValidePassword, isValidFormatDate, getDay} from './fonctions';
 
 // episode 1
 /*
@@ -125,3 +125,21 @@ else{
     alert("Au revoir");
 }
 */
+
+// episode 6
+
+let numero = Number(prompt("Veuillez saisir le numero d'un jour."))
+
+if(!isNaN(numero)){
+    const day = getDay(numero);
+
+    if(day){
+        alert(day)
+    }
+    else{
+        alert("Aucun jour ne correspond a votre saisis.")
+    }
+}
+else{
+    alert("Votre saisis est invalide.")
+}

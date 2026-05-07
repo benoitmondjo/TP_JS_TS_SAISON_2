@@ -84,5 +84,21 @@ function isValidFormatDate(date){
     }
 }
 
+/**
+ * Fonction qui donne le nom d'un jour de la semaine a partir d'un numero saisis par un utilisateur
+ * @param {Number} numero - le numero saisis
+ * @return {string | false}
+ */
+function getDay(numero){
+    const jours = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"]
+    
+    if( numero >=1 && numero <= 7){
+        return jours[numero - 1]
+    }
 
-export {isValidEmail, isValidePassword, isValidFormatDate}
+    else{
+        return false;
+    }
+}
+
+export {isValidEmail, isValidePassword, isValidFormatDate, getDay}
