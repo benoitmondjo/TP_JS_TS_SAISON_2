@@ -169,7 +169,7 @@ else{
 
 
 /* --------------- episode 7 -----------------------*/
-
+/*
 let notes = [];
 let nombreNotes = Number(prompt("Combien de notes voulez-vous saisir ?"));
 
@@ -200,3 +200,65 @@ if(!isNaN(nombreNotes)){
 else{
     alert("Le nombre saisir n'est pas valide.")
 }
+*/
+
+
+
+
+
+
+/* --------------- episode 8 -----------------------*/
+
+let eleves = [];
+let continuer = true;
+
+while (continuer) {
+    let nom = prompt("Entrez le nom de l'élève :");
+    let moyenne = Number(prompt("Entrez sa moyenne :"));
+
+    if(!isNaN(moyenne)){
+        eleves.push({
+            nom: nom,
+            moyenne: moyenne
+        });
+    }
+    else{
+        let valide = true;
+        let newMoyenne;
+
+        while(valide){
+            newMoyenne = Number(prompt("La note saisis n'est pas valide. Veuillez entrez à nouveau la moyenne de "+ nom));
+            
+            if(!isNaN(newMoyenne)){
+                valide = false;
+            }
+           
+        }
+
+        eleves.push({
+            nom: nom,
+            moyenne: newMoyenne
+        });
+
+    }
+
+
+    let reponse = prompt("Voulez-vous ajouter un autre élève ? (oui/non)");
+    reponse = reponse.toLocaleLowerCase();
+
+
+    if ((reponse !== "oui")) {
+        continuer = false;
+    }
+}
+
+
+let premier = eleves[0];
+
+for (let eleve of eleves) {
+    if (eleve.moyenne > premier.moyenne) {
+        premier = eleve;
+    }
+}
+
+alert("Premier de la classe : " + premier.nom + " avec une moyenne de " + premier.moyenne);
