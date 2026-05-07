@@ -190,8 +190,10 @@ if(!isNaN(nombreNotes)){
             
             notes.push(note);
         }
-        
-        alert("La moyenne est : " + getMoyenne(notes));
+        const status = getMoyenne(notes) >= 10 ? "admis" : " recalé"
+        const moyenne = getMoyenne(notes)
+
+        alert(`Vous êtes ${status} avec une moyenne de : ${moyenne} sur 20.`);
     }
 }
 
