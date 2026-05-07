@@ -1,6 +1,8 @@
-import {isValidEmail, isValidePassword, isValidFormatDate, getDay} from './fonctions';
+import {isValidEmail, isValidePassword, isValidFormatDate, getDay, getMoyenne} from './fonctions';
 
-// episode 1
+
+
+/* --------------- episode 1 -----------------------*/
 /*
 
 let email = prompt("Entrez votre adresse e-mail :");
@@ -21,7 +23,7 @@ if(email !== null){
 
 
 
-// episode 2
+/* --------------- episode 2 -----------------------*/
 /*
 let password = prompt("Entrer un mot de passe.");
 
@@ -41,7 +43,10 @@ if(password !== null){
 */
 
 
-// episode 3
+
+
+/* --------------- episode 3 -----------------------*/
+
 /*
 let name = prompt("Quel est votre nom ?")
 let childNum = prompt("Combien d'enfants avez-vous ?");
@@ -58,7 +63,11 @@ if(name !== null && childNum !== null){
 }
 */
 
-// episode 4
+
+
+
+/* --------------- episode 4 -----------------------*/
+
 /*
 let date = prompt("Quel est votre date de naissance. Exemple : 13/05/2020");
 // let date = "13/05/2020"
@@ -80,7 +89,14 @@ else{
 }
 */
 
-// episode 5
+
+
+
+
+
+
+/* --------------- episode 5 -----------------------*/
+
 /*
 let nom = prompt("Entrez votre nom :");
 let prenom = prompt("Entrez votre prénom :");
@@ -126,8 +142,13 @@ else{
 }
 */
 
-// episode 6
 
+
+
+
+/* --------------- episode 6 -----------------------*/
+
+/*
 let numero = Number(prompt("Veuillez saisir le numero d'un jour."))
 
 if(!isNaN(numero)){
@@ -142,4 +163,40 @@ if(!isNaN(numero)){
 }
 else{
     alert("Votre saisis est invalide.")
+}
+*/
+
+
+
+/* --------------- episode 7 -----------------------*/
+
+let notes = [];
+let nombreNotes = Number(prompt("Combien de notes voulez-vous saisir ?"));
+
+if(!isNaN(nombreNotes)){
+
+    if(nombreNotes <= 0){
+        alert(`Le nombre total de note à saisir ne peut pas être égale à 0.`)
+    }
+
+    else{
+
+        for (let i = 0; i < nombreNotes; i++) {
+            let note;
+            
+            do {
+                note = Number(prompt(`Entrez la note ${i + 1} (entre 0 et 20) :`));
+            }while (note < 0 || note > 20 || isNaN(note));
+            
+            notes.push(note);
+        }
+        const status = getMoyenne(notes) >= 10 ? "admis" : " recalé"
+        const moyenne = getMoyenne(notes)
+
+        alert(`Vous êtes ${status} avec une moyenne de : ${moyenne} sur 20.`);
+    }
+}
+
+else{
+    alert("Le nombre saisir n'est pas valide.")
 }

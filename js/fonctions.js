@@ -51,8 +51,7 @@ function isValidePassword(password){
  * Fonction verifiant qu'une date respect le format jour/mois/annee
  * @param {string} date - date a verifier
  * @returns {Object | false} - {jour,mois, annee} si date valide. Sinon false
- */
-
+*/
 function isValidFormatDate(date){
     
     // expression regulier pour s'assurer que la date saisis contient 2 chiffres pour les jours, 2 chiffres pour le mois, et 4 chiffres pour l'annee
@@ -101,4 +100,23 @@ function getDay(numero){
     }
 }
 
-export {isValidEmail, isValidePassword, isValidFormatDate, getDay}
+/**
+ * Fonction qui calcul la moyenne d'un tableaux de nombre
+ * @param {Array} notes - tableau de note
+ * @param {Number} precision - le nombre de chiffre apres la virgule
+ * @return {Number} - la moyenne
+*/
+function getMoyenne(notes, precision=2){
+
+    let somme = 0;
+        
+    for (let i = 0; i < notes.length; i++) {
+        somme += notes[i];
+    }
+    
+    let moyenne = somme / notes.length;
+
+    return moyenne.toFixed(precision);
+}
+
+export {isValidEmail, isValidePassword, isValidFormatDate, getDay, getMoyenne}
