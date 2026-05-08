@@ -1,4 +1,4 @@
-import {isValidEmail, isValidePassword, isValidFormatDate, getDay, getMoyenne} from './fonctions';
+import {isValidEmail, isValidePassword, isValidFormatDate, getDay, getMoyenne, tableMultiplication} from './fonctions';
 
 
 
@@ -208,7 +208,7 @@ else{
 
 
 /* --------------- episode 8 -----------------------*/
-
+/*
 let eleves = [];
 let continuer = true;
 
@@ -262,3 +262,18 @@ for (let eleve of eleves) {
 }
 
 alert("Premier de la classe : " + premier.nom + " avec une moyenne de " + premier.moyenne);
+*/
+
+
+/* --------------- episode 9 -----------------------*/
+let nombre = prompt("Entrer le nombre:")
+
+if(nombre !== null){
+    nombre = Number(nombre);
+    if( !isNaN(nombre) ){
+        tableMultiplication(nombre)
+    }
+}
+else{
+    alert("Au revoir.")
+}

@@ -119,4 +119,16 @@ function getMoyenne(notes, precision=2){
     return moyenne.toFixed(precision);
 }
 
-export {isValidEmail, isValidePassword, isValidFormatDate, getDay, getMoyenne}
+
+/**
+ * Fonction pour afficher la table de mutiplication d'un nombre
+ * @param {Number} nombre 
+ * @returns {void} 
+ */
+function tableMultiplication(nombre){
+    for(let i=1 ; i <= 10; i++){
+        console.log(`${nombre} X ${i} = ${nombre*i}`);
+    }
+}
+
+export {isValidEmail, isValidePassword, isValidFormatDate, getDay, getMoyenne, tableMultiplication}
