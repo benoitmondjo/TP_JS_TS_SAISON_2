@@ -124,11 +124,29 @@ function getMoyenne(notes, precision=2){
  * Fonction pour afficher la table de mutiplication d'un nombre
  * @param {Number} nombre 
  * @returns {void} 
- */
+*/
 function tableMultiplication(nombre){
     for(let i=1 ; i <= 10; i++){
         console.log(`${nombre} X ${i} = ${nombre*i}`);
     }
 }
 
-export {isValidEmail, isValidePassword, isValidFormatDate, getDay, getMoyenne, tableMultiplication}
+
+
+/**
+ * Function qui determine si un nombre est paire.
+ * @param {Number} nombre 
+ * @returns {Boolean} - True si nombre est paire. Sinon false
+*/
+function isPair(nombre){
+
+    if( (nombre % 2) === 0) {
+        return true;
+    }
+    else{
+        return false;
+    }
+
+}
+
+export {isValidEmail, isValidePassword, isValidFormatDate, getDay, getMoyenne, tableMultiplication, isPair}

@@ -1,4 +1,4 @@
-import {isValidEmail, isValidePassword, isValidFormatDate, getDay, getMoyenne, tableMultiplication} from './fonctions';
+import {isValidEmail, isValidePassword, isValidFormatDate, getDay, getMoyenne, tableMultiplication, isPair} from './fonctions';
 
 
 
@@ -266,6 +266,7 @@ alert("Premier de la classe : " + premier.nom + " avec une moyenne de " + premie
 
 
 /* --------------- episode 9 -----------------------*/
+/*
 let nombre = prompt("Entrer le nombre:")
 
 if(nombre !== null){
@@ -273,6 +274,24 @@ if(nombre !== null){
     if( !isNaN(nombre) ){
         tableMultiplication(nombre)
     }
+}
+else{
+    alert("Au revoir.")
+}
+*/
+
+
+/* --------------- episode 10 -----------------------*/
+let nombre = prompt("Entrer le nombre:")
+
+if(nombre !== null){
+   if(nombre >= 0){
+        if(isPair(nombre)){alert(`Le nombre ${nombre} est paire.`)}
+        else{alert(`Le nombre ${nombre} est impair.`)}
+   }
+   else{
+    alert("Saisir un nombre entier positif.")
+   }
 }
 else{
     alert("Au revoir.")
